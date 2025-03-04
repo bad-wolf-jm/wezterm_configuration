@@ -41,6 +41,6 @@ local function default_program_zsh()
 	return { "C:\\git-sdk-64\\msys2_shell.cmd", "-defterm", "-here", "-no-start", "-ucrt64", "-shell", "bash" }
 end
 config.default_prog = default_program_zsh()
---config.default_prog = default_program_powershell()
+config.default_prog = default_program_powershell()
 
 return config
