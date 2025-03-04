@@ -20,6 +20,7 @@ config.color_scheme = "Tokyo Night"
 -- I don't want ligatures!!!
 config.font = wezterm.font("JetBrainsMonoNL Nerd Font")
 config.font_size = 9
+config.window_decorations = "RESIZE"
 
 local function default_program_powershell()
 	local powershell = nil
