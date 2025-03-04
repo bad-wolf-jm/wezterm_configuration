@@ -25,7 +25,7 @@ config.window_decorations = "RESIZE"
 local function default_program_powershell()
 	local powershell = nil
 	local program_files = "C:\\Program Files"
-	local powershell_options = { "7_preview", "7" }
+	local powershell_options = { "7-preview", "7" }
 	for _, version in pairs(powershell_options) do
 		local P = program_files .. "\\" .. "PowerShell" .. "\\" .. version .. "\\" .. "pwsh.exe"
 		if exists(P) then
@@ -38,9 +38,9 @@ local function default_program_powershell()
 end
 
 local function default_program_zsh()
-	return { "C:\\git-sdk-64\\msys2_shell.cmd", "-defterm", "-here", "-no-start", "-ucrt64", "-shell", "zsh" }
+	return { "C:\\git-sdk-64\\msys2_shell.cmd", "-defterm", "-here", "-no-start", "-ucrt64", "-shell", "bash" }
 end
 config.default_prog = default_program_zsh()
-config.default_prog = default_program_powershell()
+--config.default_prog = default_program_powershell()
 
 return config
