@@ -37,10 +37,17 @@ local function default_program_powershell()
 	return { powershell, "-nol" }
 end
 
-local function default_program_zsh()
-	return { "C:\\git-sdk-64\\msys2_shell.cmd", "-defterm", "-here", "-no-start", "-ucrt64", "-shell", "bash" }
+local function default_program_bash()
+	return { "C:\\git-sdk-64\\msys2_shell.cmd", "-defterm", "-here", "-no-start", "-mingw64", "-shell", "bash" }
 end
-config.default_prog = default_program_zsh()
+config.default_prog = default_program_bash()
 config.default_prog = default_program_powershell()
+
+local act = wezterm.action
+
+config.keys = {
+  { key = '{', mods = 'SHIFT|ALT', action = act.MoveTabRelative(-1) },
+  { key = '}', mods = 'SHIFT|ALT', action = act.MoveTabRelative(1) },
+}
 
 return config
